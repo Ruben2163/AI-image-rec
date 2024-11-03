@@ -2,16 +2,6 @@ import tensorflow as tf
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
-from keras import backend as K
-
-def precision(y_true, y_pred):
-    return K.sum(K.round(K.clip(y_pred, 0, 1)) * y_true) / (K.sum(K.round(K.clip(y_pred, 0, 1))) + K.epsilon())
-
-def recall(y_true, y_pred):
-    return K.sum(K.round(K.clip(y_pred, 0, 1)) * y_true) / (K.sum(y_true) + K.epsilon())
-
-def binary_accuracy(y_true, y_pred):
-    return K.mean(K.equal(K.round(K.clip(y_pred, 0, 1)), y_true))
 import os
 
 Sequential = tf.keras.models.Sequential
@@ -70,16 +60,4 @@ fig.suptitle('Accuracy', fontsize=20)
 plt.legend(loc="upper left")
 plt.show()
 
-pre = precision()
-re = recall()
-acc = binary_accuracy()
-
-for batch in test.as_numpy_iterator(): 
-    X, y = batch
-    yhat = model.predict(X)
-    pre.update_state(y, yhat)
-    re.update_state(y, yhat)
-    acc.update_state(y, yhat)
-
-print(pre.result(), re.result(), acc.result())
 model.save(os.path.join('models','happysadmodel.h5'))
