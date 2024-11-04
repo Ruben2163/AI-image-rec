@@ -7,8 +7,6 @@ import numpy as np
 from matplotlib import pyplot as plt
 import os
 
-
-
 Sequential = tf.keras.models.Sequential
 Conv2D = tf.keras.layers.Conv2D
 MaxPooling2D = tf.keras.layers.MaxPooling2D
@@ -16,7 +14,6 @@ Dense = tf.keras.layers.Dense
 Flatten = tf.keras.layers.Flatten
 Dropout = tf.keras.layers.Dropout
 load_model = tf.keras.models.load_model
-
 
 data = tf.keras.utils.image_dataset_from_directory('TrainingBenchMark/TestData')
 data_iterator = data.as_numpy_iterator()
@@ -51,6 +48,6 @@ Logdir = 'logs'
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=Logdir)
 hist = model.fit(train, epochs=20, validation_data=val, callbacks=[tensorboard_callback])
 
-model.save('Person_Dog_Rec.h5')
+model.save(os.path.join('TrainingBenchMark','models','person_dog.h5'))
 
 print(f'BenchMark Time was:{(datetime.now() - StartTime)}')
