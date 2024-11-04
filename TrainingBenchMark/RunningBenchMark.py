@@ -1,13 +1,16 @@
 from datetime import datetime
 StartTime = datetime.now()
-
+import os
 import tensorflow as tf
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+import csv
+
+# Start timing
+
 
 # Load the model
-model_path = 'TrainingBenchMark/models/Person_Dog_Rec.h5'
+model_path = 'TrainingBenchMark/models/shapes.h5'
 model = tf.keras.models.load_model(model_path)
 
 # Function to preprocess the input image
@@ -24,26 +27,33 @@ def load_and_preprocess_image(image_path):
     img = np.expand_dims(img, axis=0)
     return img
 
-# Load and preprocess a sample image
-image_path = 'TrainingBenchMark/Input/test.jpeg'  # Change this to your test image path
-input_image = load_and_preprocess_image(image_path)
+# Folder containing the images
+folder_path = 'TrainingBenchMark/Input/'  # Change this to your folder path
+output_csv_path = 'TrainingBenchMark/predictions.csv'  # Output CSV file
 
-# Make a prediction
-prediction = model.predict(input_image)
-print(prediction)
-predicted_class = (prediction > 0.5).astype(int)  # Thresholding for binary classification
+# Prepare CSV file
+with open(output_csv_path, mode='w', newline='') as csv_file:
+    csv_writer = csv.writer(csv_file)
+    csv_writer.writerow(['Filename', 'Predicted Class'])  # Header
 
-# Output the prediction
-if predicted_class[0][0] == 1:
-    print("Predicted class: Dog")
-    reg="Dog"
-else:
-    print("Predicted class: Human")
-    reg="Human"
+    # Process each image in the folder
+    for filename in os.listdir(folder_path):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            image_path = os.path.join(folder_path, filename)
+            input_image = load_and_preprocess_image(image_path)
 
-print(f'BenchMark Time was:{(datetime.now() - StartTime)}')
+            # Make a prediction
+            prediction = model.predict(input_image)
+            predicted_class = (prediction > 0.5).astype(int)  # Thresholding for binary classification
 
-plt.imshow(input_image[0])  
-plt.axis('off')
-plt.title(reg)
-plt.show()
+            # Determine the predicted class
+            if predicted_class[0][0] == 1:
+                predicted_label = "Square"
+            else:
+                predicted_label = "Circle"
+
+            # Write the prediction to the CSV file
+            csv_writer.writerow([filename, predicted_label])
+
+# Print benchmark time
+print(f'Benchmark Time was: {(datetime.now() - StartTime)}')
