@@ -7,7 +7,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 # Load the model
-model_path = 'models/Person_Dog_Rec.h5'
+model_path = 'TrainingBenchMark/models/Person_Dog_Rec.h5'
 model = tf.keras.models.load_model(model_path)
 
 # Function to preprocess the input image
@@ -25,11 +25,12 @@ def load_and_preprocess_image(image_path):
     return img
 
 # Load and preprocess a sample image
-image_path = 'Input/test.jpeg'  # Change this to your test image path
+image_path = 'TrainingBenchMark/Input/test.jpeg'  # Change this to your test image path
 input_image = load_and_preprocess_image(image_path)
 
 # Make a prediction
 prediction = model.predict(input_image)
+print(prediction)
 predicted_class = (prediction > 0.5).astype(int)  # Thresholding for binary classification
 
 # Output the prediction

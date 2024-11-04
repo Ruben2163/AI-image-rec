@@ -15,7 +15,7 @@ Flatten = tf.keras.layers.Flatten
 Dropout = tf.keras.layers.Dropout
 load_model = tf.keras.models.load_model
 
-data = tf.keras.utils.image_dataset_from_directory('TrainingBenchMark/TestData')
+data = tf.keras.utils.image_dataset_from_directory('TrainingBenchMark/Data')
 data_iterator = data.as_numpy_iterator()
 batch = data_iterator.next()
 
@@ -46,7 +46,7 @@ model.compile('adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'])
 
 Logdir = 'logs'
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=Logdir)
-hist = model.fit(train, epochs=20, validation_data=val, callbacks=[tensorboard_callback])
+hist = model.fit(train, epochs=50, validation_data=val, callbacks=[tensorboard_callback])
 
 model.save(os.path.join('TrainingBenchMark','models','person_dog.h5'))
 
