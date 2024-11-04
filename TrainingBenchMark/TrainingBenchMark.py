@@ -18,7 +18,7 @@ Dropout = tf.keras.layers.Dropout
 load_model = tf.keras.models.load_model
 
 
-data = tf.keras.utils.image_dataset_from_directory('TestData')
+data = tf.keras.utils.image_dataset_from_directory('TrainingBenchMark/TestData')
 data_iterator = data.as_numpy_iterator()
 batch = data_iterator.next()
 

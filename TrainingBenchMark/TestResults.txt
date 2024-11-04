@@ -1,0 +1,11 @@
+Ruben: I7 MacBook Pro
+Training Model: 2:30 Minutes
+Running Model: 8.2 Seconds
+
+Khushman: M2 MacBook Air
+Training Model: N/A
+Running Model: N/A
+
+Yuvraj: I7 4070S PC
+Training Model: N/A
+Running Model: N/A
