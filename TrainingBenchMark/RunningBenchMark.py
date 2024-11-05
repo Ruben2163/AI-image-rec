@@ -6,9 +6,6 @@ import cv2
 import numpy as np
 import csv
 
-# Start timing
-
-
 # Load the model
 model_path = 'TrainingBenchMark/models/shapes.h5'
 model = tf.keras.models.load_model(model_path)

@@ -1,6 +1,6 @@
 Ruben: I7 MacBook Pro
 Training Model: 3:27 Minutes
-Running Model: 16.1 Seconds
+Running Model: 17.8 Seconds
 
 Khushman: M2 MacBook Air
 Training Model: N/A
