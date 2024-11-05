@@ -16,3 +16,12 @@ The modules and libs being used are the following:
   Matplotlib
   Pillow
   NumPy
+
+
+
+We have made a basic AI benchmark with creating models using Tensorflow
+We have had a model that can tell between happy and sad people
+We have more a model that can tell between cirlces and squares
+We have made a model that can tell between the minecraft plains and desert
+
+
