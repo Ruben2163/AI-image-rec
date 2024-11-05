@@ -50,7 +50,7 @@ with open(output_csv_path, mode='w', newline='') as csv_file:
                 predicted_label = "Desert"
 
             # Write the prediction to the CSV file
-            csv_writer.writerow([filename, predicted_label])
+            csv_writer.writerow([filename, predicted_label, prediction])
 
 # Print benchmark time
 print(f'Benchmark Time was: {(datetime.now() - StartTime)}')
