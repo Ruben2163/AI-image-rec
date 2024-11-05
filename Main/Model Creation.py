@@ -1,9 +1,9 @@
+#Import Libarys
 import tensorflow as tf
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 import os
-
 Sequential = tf.keras.models.Sequential
 Conv2D = tf.keras.layers.Conv2D
 MaxPooling2D = tf.keras.layers.MaxPooling2D
@@ -12,7 +12,7 @@ Flatten = tf.keras.layers.Flatten
 Dropout = tf.keras.layers.Dropout
 load_model = tf.keras.models.load_model
 
-
+#Creating Batches
 data = tf.keras.utils.image_dataset_from_directory('data')
 data_iterator = data.as_numpy_iterator()
 batch = data_iterator.next()
@@ -25,19 +25,15 @@ train = data.take(train_size)
 val = data.skip(train_size).take(val_size)
 test = data.skip(train_size+val_size).take(test_size)
 
+#Creating Network
 model = Sequential()
-
 model.add(Conv2D(16, (3, 3), 1, activation='relu', input_shape=(256,256,3)))
 model.add(MaxPooling2D())
-
 model.add(Conv2D(32, (3 ,3), 1, activation='relu'))
 model.add(MaxPooling2D())
-
 model.add(Conv2D(15, (3 ,3), 1, activation='relu'))
 model.add(MaxPooling2D())
-
 model.add(Flatten())
-
 model.add(Dense(256, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 model.compile('adam', loss=tf.losses.BinaryCrossentropy(), metrics=['accuracy'])
@@ -60,4 +56,4 @@ fig.suptitle('Accuracy', fontsize=20)
 plt.legend(loc="upper left")
 plt.show()
 
-model.save(os.path.join('models','happysadmodel.h5'))
+model.save(os.path.join('models','Minecraft_Biome.h5'))
