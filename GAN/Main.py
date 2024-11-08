@@ -14,10 +14,10 @@ train_images = np.expand_dims(train_images, axis=-1)
 
 # Constants
 BUFFER_SIZE = 60000
-BATCH_SIZE = 10000
-EPOCHS = 10
+BATCH_SIZE = 5000
+EPOCHS = 100
 noise_dim = 100
-num_examples_to_generate = 64
+num_examples_to_generate = 10
 
 # Create a dataset object
 train_dataset = tf.data.Dataset.from_tensor_slices(train_images).shuffle(BUFFER_SIZE).batch(BATCH_SIZE)

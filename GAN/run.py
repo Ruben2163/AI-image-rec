@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the trained generator model
-generator = tf.keras.models.load_model('models/generator_model.h5')
+generator = tf.keras.models.load_model('GAN/models/generator_model.h5')
 
 # Define the noise dimension (must match the dimension used during training)
 noise_dim = 100
