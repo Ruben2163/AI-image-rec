@@ -45,7 +45,7 @@ with open(output_csv_path, mode='w', newline='') as csv_file:
 
             # Determine the predicted class
             if predicted_class[0][0] == 1:
-                predicted_label = "Plains"
+                predicted_label = "Persons"
             else:
                 predicted_label = "Desert"
 

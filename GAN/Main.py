@@ -14,8 +14,8 @@ train_images = np.expand_dims(train_images, axis=-1)
 
 # Constants
 BUFFER_SIZE = 60000
-BATCH_SIZE = 5000
-EPOCHS = 100
+BATCH_SIZE = 1000
+EPOCHS = 10
 noise_dim = 100
 num_examples_to_generate = 10
 

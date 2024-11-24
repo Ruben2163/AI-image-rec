@@ -56,4 +56,4 @@ fig.suptitle('Accuracy', fontsize=20)
 plt.legend(loc="upper left")
 plt.show()
 
-model.save(os.path.join('models','Minecraft_Biome.h5'))
+model.save(os.path.join('models','person_dog.h5'))
