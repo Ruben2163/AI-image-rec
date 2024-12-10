@@ -1,4 +1,5 @@
 AI-Image-Recognition
+This Repo is no longer being updated
 
 This projects has been made to create a AI model using a CNN to classify images 
 
