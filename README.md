@@ -1,5 +1,6 @@
 AI-Image-Recognition
 This Repo is no longer being updated
+you can still use this code but it saves to a .h5 not sacetensors or .keras file unfortunatly
 
 This projects has been made to create a AI model using a CNN to classify images 
 
