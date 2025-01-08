@@ -1,4 +1,4 @@
-#AI-Image-Recognition
+# AI-Image-Recognition
 This Repo is no longer being updated
 you can still use this code but it saves to a .h5 not sacetensors or .keras file unfortunatly
 
