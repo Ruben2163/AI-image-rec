@@ -5,7 +5,7 @@ It is a CNN that takes in any data to train a model it is a template it made and
 
 ## Model storage
 you can still use this code but it saves to a .h5 not safetensors or .keras file unfortunatly
-
+## general info
 This projects has been made to create a AI model using a CNN to classify images 
 
 The codebase will be written in python using tensorflow and keras and will uses datasets such as:
