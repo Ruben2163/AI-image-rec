@@ -1,5 +1,5 @@
 # AI-Image-Recognition
-
+## V2 is coming
 ## What is this?
 It is a CNN that takes in any data to train a model it is a template it made and use see minecraft seed finder
 
