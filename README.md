@@ -1,5 +1,9 @@
 # AI-Image-Recognition
-This Repo is no longer being updated
+
+## What is this?
+It is a CNN that takes in any data to train a model it is a template it made and use see minecraft seed finder
+
+
 you can still use this code but it saves to a .h5 not safetensors or .keras file unfortunatly
 
 This projects has been made to create a AI model using a CNN to classify images 
