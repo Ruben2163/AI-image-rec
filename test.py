@@ -1,3 +1,0 @@
-import antigravity
-
-antigravity.geohash()
